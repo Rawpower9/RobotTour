@@ -5,17 +5,12 @@ extern DeviceDriverSet_Motor AppMotor;
 
 enum SmartRobotCarMotionControl
 {
-  Forward,
+  Forward, //(0)
   For,//(1)
   Backward,      //(2)
   Left,          //(3)
   Right,         //(4)
-  //LeftForward,  //(5)
-  //LeftBackward,  //(6)
-  //RightForward,  //(7)
-  //RightBackward, //(8)
-  stop_it  
-    //(9)
+  stop_it
 };               //direction:（1）、（2）、 （3）、（4）、（5）、（6）
 
 struct Application_xxx
@@ -65,7 +60,7 @@ static void ApplicationFunctionSet_SmartRobotCarMotionControl(SmartRobotCarMotio
   case /* constant-expression */
       Forward:
     /* code */
-      AppMotor.DeviceDriverSet_Motor_control(/*direction_A*/ direction_just, /*speed_A*/ speed*0.7,
+      AppMotor.DeviceDriverSet_Motor_control(/*direction_A*/ direction_just, /*speed_A*/ speed,
                                              /*direction_B*/ direction_just, /*speed_B*/ speed, /*controlED*/ control_enable); //Motor control
     break;
   case 
